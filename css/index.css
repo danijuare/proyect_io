@@ -1,11 +1,17 @@
 /* Variables de Color para fácil manejo */
 :root {
-    --primary-color: #007bff; /* Azul vibrante */
-    --secondary-color: #6c757d; /* Gris para botones secundarios */
-    --background-color: #f4f7f6; /* Fondo claro */
-    --card-background: #ffffff; /* Fondo de tarjetas */
-    --text-color: #343a40; /* Texto principal oscuro */
-    --assigned-color: #28a745; /* Verde para la asignación */
+    --primary-color: #007bff;
+    /* Azul vibrante */
+    --secondary-color: #6c757d;
+    /* Gris para botones secundarios */
+    --background-color: #f4f7f6;
+    /* Fondo claro */
+    --card-background: #ffffff;
+    /* Fondo de tarjetas */
+    --text-color: #343a40;
+    /* Texto principal oscuro */
+    --assigned-color: #28a745;
+    /* Verde para la asignación */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
@@ -44,7 +50,8 @@ h1 {
     margin: 0;
 }
 
-h2, h3 {
+h2,
+h3 {
     color: var(--primary-color);
     border-bottom: 2px solid #e9ecef;
     padding-bottom: 5px;
@@ -62,19 +69,24 @@ h2, h3 {
 }
 
 /* Paneles de Controles y Resultados */
-.controls-panel, .matrix-section, .results-panel {
+.controls-panel,
+.matrix-section,
+.results-panel {
     background-color: var(--card-background);
     padding: 25px;
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1; /* Permite que los paneles crezcan */
-    min-width: 400px; /* Asegura un ancho mínimo */
+    flex: 1;
+    /* Permite que los paneles crezcan */
+    min-width: 400px;
+    /* Asegura un ancho mínimo */
 }
 
 /* Flexibilidad para la sección de resultados */
 .matrix-section {
-    flex-grow: 2; /* Que la matriz ocupe más espacio */
+    flex-grow: 2;
+    /* Que la matriz ocupe más espacio */
 }
 
 /* Inputs y Botones */
@@ -168,7 +180,8 @@ h2, h3 {
 
 .cost-matrix input:focus {
     border-color: var(--primary-color);
-    background-color: #fff8e1; /* Fondo amarillo claro al enfocar */
+    background-color: #fff8e1;
+    /* Fondo amarillo claro al enfocar */
     outline: none;
 }
 
@@ -176,7 +189,8 @@ h2, h3 {
 .results-summary {
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #e9f7ef; /* Fondo verde claro */
+    background-color: #e9f7ef;
+    /* Fondo verde claro */
     border-left: 5px solid var(--assigned-color);
     border-radius: 5px;
 }
@@ -200,7 +214,8 @@ h2, h3 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.results-table th, .results-table td {
+.results-table th,
+.results-table td {
     padding: 12px 15px;
     text-align: center;
     border: 1px solid #dee2e6;
@@ -215,18 +230,23 @@ h2, h3 {
     background-color: #e2e6ea;
 }
 
-.results-table .header-col, .results-table .header-row, .results-table .header-corner {
+.results-table .header-col,
+.results-table .header-row,
+.results-table .header-corner {
     background-color: var(--primary-color);
     color: white;
     font-weight: bold;
-    position: sticky; /* Sticky headers for better scrolling */
+    position: sticky;
+    /* Sticky headers for better scrolling */
     top: 0;
     z-index: 10;
 }
+
 .results-table .header-row {
     background-color: #3498db;
     left: 0;
 }
+
 .results-table .header-corner {
     background-color: #2980b9;
     left: 0;
@@ -246,8 +266,13 @@ h2, h3 {
 
 /* Animación para el resaltado */
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-    100% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
 }
 
 /* Responsive Design */
@@ -256,10 +281,14 @@ h2, h3 {
         flex-direction: column;
         width: 95%;
     }
-    .controls-panel, .matrix-section, .results-panel {
+
+    .controls-panel,
+    .matrix-section,
+    .results-panel {
         width: 100%;
         margin-bottom: 10px;
     }
+
     .btn {
         width: 100%;
         justify-content: center;

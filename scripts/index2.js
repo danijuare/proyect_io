@@ -1,14 +1,8 @@
-// =========================================================
-// Funciones de la Interfaz de Usuario
-// =========================================================
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Generar la matriz inicial con el tamaño por defecto (3) al cargar
     generarMatriz();
 });
 
 function limpiarDatos() {
-    // Recarga la página para limpiar todo
     window.location.reload();
 }
 
