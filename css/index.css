@@ -1,0 +1,267 @@
+/* Variables de Color para fácil manejo */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Gris para botones secundarios */
+    --background-color: #f4f7f6; /* Fondo claro */
+    --card-background: #ffffff; /* Fondo de tarjetas */
+    --text-color: #343a40; /* Texto principal oscuro */
+    --assigned-color: #28a745; /* Verde para la asignación */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos Globales y Tipografía */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+header .logo-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Contenedor Principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+/* Paneles de Controles y Resultados */
+.controls-panel, .matrix-section, .results-panel {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Permite que los paneles crezcan */
+    min-width: 400px; /* Asegura un ancho mínimo */
+}
+
+/* Flexibilidad para la sección de resultados */
+.matrix-section {
+    flex-grow: 2; /* Que la matriz ocupe más espacio */
+}
+
+/* Inputs y Botones */
+.input-group {
+    margin-bottom: 15px;
+}
+
+#matrix-size {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+    margin-left: 10px;
+    transition: border-color 0.3s;
+}
+
+#matrix-size:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.btn:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+/* Matriz de Costos (Estilo de cuadrícula) */
+.matrix-input-area {
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.cost-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.cost-matrix .row {
+    display: flex;
+    gap: 5px;
+}
+
+.cost-matrix .cell {
+    flex: 1;
+}
+
+.cost-matrix input {
+    width: 100%;
+    padding: 8px 5px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s, background-color 0.3s;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.cost-matrix input:focus {
+    border-color: var(--primary-color);
+    background-color: #fff8e1; /* Fondo amarillo claro al enfocar */
+    outline: none;
+}
+
+/* Resultados */
+.results-summary {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e9f7ef; /* Fondo verde claro */
+    border-left: 5px solid var(--assigned-color);
+    border-radius: 5px;
+}
+
+#cost-result {
+    color: var(--assigned-color);
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.95em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.results-table th, .results-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    transition: background-color 0.3s;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.results-table tr:hover {
+    background-color: #e2e6ea;
+}
+
+.results-table .header-col, .results-table .header-row, .results-table .header-corner {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    position: sticky; /* Sticky headers for better scrolling */
+    top: 0;
+    z-index: 10;
+}
+.results-table .header-row {
+    background-color: #3498db;
+    left: 0;
+}
+.results-table .header-corner {
+    background-color: #2980b9;
+    left: 0;
+    z-index: 11;
+}
+
+
+/* Estilo de Celda Asignada */
+.results-table .assigned {
+    background-color: var(--assigned-color);
+    color: white;
+    font-weight: bolder;
+    position: relative;
+    /* Animación de "brillo" */
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Animación para el resaltado */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    100% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+    .controls-panel, .matrix-section, .results-panel {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

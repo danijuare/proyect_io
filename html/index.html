@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Método Húngaro - Problema de Asignación</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="logo-text"><i class="fas fa-calculator"></i> Método Húngaro</div>
+        <h1>Calculadora del Problema de Asignación</h1>
+    </header>
+
+    <main class="container">
+        <section class="controls-panel">
+            <h2>Configuración de la Matriz</h2>
+            <div class="input-group">
+                <label for="matrix-size">Tamaño de la Matriz (N):</label>
+                <input type="number" id="matrix-size" min="2" max="8" value="3">
+            </div>
+            <button onclick="generarMatriz()" class="btn btn-primary" id="generate-button">
+                <i class="fas fa-sync-alt"></i> Generar Matriz
+            </button>
+            <button onclick="limpiarDatos()" class="btn btn-secondary">
+                <i class="fas fa-trash"></i> Limpiar Datos
+            </button>
+        </section>
+
+        <section class="matrix-section">
+            <h2>Matriz de Costos</h2>
+            <div id="matrix-container" class="matrix-input-area">
+            </div>
+
+            <button onclick="resolverHungaro()" id="solve-button" class="btn btn-secondary" disabled>
+                <i class="fas fa-cogs"></i> Resolver Asignación
+            </button>
+        </section>
+
+        <section id="results" class="results-panel">
+            <h2>Resultados de Asignación</h2>
+            <div class="results-summary">
+                <p>Costo Mínimo Total (Simulado): <strong id="cost-result">...</strong></p>
+            </div>
+
+            <h3>Asignaciones Óptimas</h3>
+            <div class="table-container">
+                <table id="assignment-table" class="results-table">
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../scripts/index.js"></script>
+</body>
+
+</html>
